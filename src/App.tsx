@@ -9,11 +9,7 @@ function App() {
   return (
     <>
       <div>
-        <h1>It works and you found me!</h1>
-        <button className="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3">
-          ...
-        </button>
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
+        <h1>Bienvunue dans mon projet HRnet !</h1>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>

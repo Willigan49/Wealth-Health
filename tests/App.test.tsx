@@ -6,7 +6,7 @@ import React from 'react';
 describe('App', () => {
   it('renders headline', () => {
     render(<App />);
-    const headline = screen.getByText(/It works and you found me!/i);
+    const headline = screen.getByText(/Bienvunue dans mon projet HRnet !/i);
     expect(headline).toBeInTheDocument();
   });
 });
