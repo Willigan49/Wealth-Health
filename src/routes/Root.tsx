@@ -1,8 +1,11 @@
 import { Outlet } from "react-router-dom";
-export default function Root() {
+import Header from "../components/Header";
+
+export default function Root(): JSX.Element {
   return (
     <>
-      <div className=" w-screen h-screen bg-principal">
+      <div className=" h-screen w-screen bg-principal">
+        <Header />
         <Outlet />
       </div>
     </>
