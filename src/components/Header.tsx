@@ -1,18 +1,38 @@
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 export default function Header(): JSX.Element {
   return (
-    <div>
+    <div className="flex justify-between text-secondary">
       <div>
-        <h1>HRnet</h1>
+        <Link to="/">
+          <h1 className="text-2xl font-black">HRnet</h1>
+        </Link>
       </div>
       <div>
-        <ul>
+        <ul className="flex gap-10">
           <li>
-            <Link to="/">Create Employee</Link>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive
+                  ? "underline decoration-2 underline-offset-8"
+                  : undefined
+              }
+            >
+              Create Employee
+            </NavLink>
           </li>
           <li>
-            <Link to="/table">Employee Table</Link>
+            <NavLink
+              to="/table"
+              className={({ isActive }) =>
+                isActive
+                  ? "underline decoration-2 underline-offset-8"
+                  : undefined
+              }
+            >
+              Employee Table
+            </NavLink>
           </li>
         </ul>
       </div>
