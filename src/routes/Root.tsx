@@ -4,8 +4,8 @@ import { NavLink, Link } from "react-router-dom";
 export default function Root(): JSX.Element {
   return (
     <>
-      <div className="maw-w-max h-screen bg-principal font-nunito">
-        <div className="m-auto w-full max-w-[1440px] p-5">
+      <div className="bg-principal">
+        <div className="m-auto flex min-h-screen w-full max-w-[1440px] flex-col gap-5 p-5 font-nunito">
           <div className="flex justify-between text-secondary">
             <div>
               <Link to="/">
@@ -43,7 +43,9 @@ export default function Root(): JSX.Element {
               </ul>
             </div>
           </div>
-          <Outlet />
+          <div className="flex flex-1 flex-col items-center justify-center">
+            <Outlet />
+          </div>
         </div>
       </div>
     </>

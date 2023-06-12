@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Root from "./routes/Root.tsx";
+import CreateEmployee from "./routes/CreateEmployee.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 
@@ -12,7 +13,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <div>create Employee</div>
+        element: <CreateEmployee />
       },{
         path: "/table",
         element: <h1>table Employee</h1>

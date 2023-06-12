@@ -1,7 +1,6 @@
 export default function CreateEmployee(): JSX.Element {
-    return(
-        <>
-        <h1>Create Employee</h1>
-        </>
-    )
+  return (
+    <div className="bg-secondary h-[75vh] max-w-[480px] w-full rounded-3xl">
+    </div>
+  );
 }

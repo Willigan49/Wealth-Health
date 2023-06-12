@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1685972503408" clover="3.2.0">
-  <project timestamp="1685972503408" name="All files">
+<coverage generated="1686153687392" clover="3.2.0">
+  <project timestamp="1686153687392" name="All files">
     <metrics statements="51" coveredstatements="51" conditionals="7" coveredconditionals="7" methods="3" coveredmethods="3" elements="61" coveredelements="61" complexity="0" loc="51" ncloc="51" packages="1" files="1" classes="1"/>
     <file name="Root.tsx" path="/Users/guillaume/Web/OpenClassrooms/Wealth-Health/src/routes/Root.tsx">
       <metrics statements="51" coveredstatements="51" conditionals="7" coveredconditionals="7" methods="3" coveredmethods="3"/>
