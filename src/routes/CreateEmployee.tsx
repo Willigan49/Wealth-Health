@@ -4,10 +4,12 @@ import Stepper from "awesome-react-stepper";
 import Button from "../components/Button";
 import Input from "../components/Input";
 import { useState } from "react";
+import unitedStates from "../utils/states.json";
 
 export default function CreateEmployee(): JSX.Element {
   const [birthDate, setBirthDate] = useState<Date | null>(null);
   const [startDate, setStartDate] = useState<Date | null>(null);
+  const unitedStatesList = unitedStates.map((state) => <option value={state.name} key={state.abbreviation}></option>);
 
   return (
     <div className="w-full max-w-[480px] rounded-3xl bg-secondary p-10">
@@ -53,7 +55,7 @@ export default function CreateEmployee(): JSX.Element {
           <div className="flex w-full flex-col items-center gap-4">
             <Input placeholder="Street" type="text" />
             <Input placeholder="City" type="text" />
-            <Input placeholder="State" type="text" />
+            <Input placeholder="State" listName="state-list" datalist={unitedStatesList} />
             <Input placeholder="ZIP Code" type="number" />
           </div>
         </div>
