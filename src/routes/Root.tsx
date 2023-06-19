@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { NavLink, Link } from "react-router-dom";
 
 export default function Root(): JSX.Element {
+
   return (
     <>
       <div className="bg-primary">
@@ -15,15 +16,7 @@ export default function Root(): JSX.Element {
             <div>
               <ul className="flex gap-10">
                 <li>
-                  <NavLink
-                    to="/"
-                    role="create"
-                    className={({ isActive }) =>
-                      isActive
-                        ? "underline decoration-2 underline-offset-8"
-                        : undefined
-                    }
-                  >
+                  <NavLink to="/" role="create" className={({ isActive }) => (isActive ? "underline decoration-2 underline-offset-8" : undefined)}>
                     Create Employee
                   </NavLink>
                 </li>
@@ -31,11 +24,7 @@ export default function Root(): JSX.Element {
                   <NavLink
                     to="/table"
                     role="table"
-                    className={({ isActive }) =>
-                      isActive
-                        ? "underline decoration-2 underline-offset-8"
-                        : undefined
-                    }
+                    className={({ isActive }) => (isActive ? "underline decoration-2 underline-offset-8" : undefined)}
                   >
                     Employee Table
                   </NavLink>

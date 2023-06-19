@@ -5,11 +5,15 @@ import Button from "../components/Button";
 import Input from "../components/Input";
 import { useState } from "react";
 import unitedStates from "../utils/states.json";
+import departments from "../utils/departments.json";
+import Modale from "../components/Modale";
 
 export default function CreateEmployee(): JSX.Element {
   const [birthDate, setBirthDate] = useState<Date | null>(null);
   const [startDate, setStartDate] = useState<Date | null>(null);
+  const [displayModale, setDisplayModale] = useState<boolean>(false);
   const unitedStatesList = unitedStates.map((state) => <option value={state.name} key={state.abbreviation}></option>);
+  const departmentList = departments.map((department) => <option value={department.name} key={department.id}></option>);
 
   return (
     <div className="w-full max-w-[480px] rounded-3xl bg-secondary p-10">
@@ -32,18 +36,24 @@ export default function CreateEmployee(): JSX.Element {
             <Input placeholder="First Name" type="text" />
             <Input placeholder="Last Name" type="text" />
             <DatePicker
+              dateFormat="dd/MM/yyyy"
               placeholderText="Date of Birth"
               selected={birthDate}
               onChange={(date: Date) => setBirthDate(date)}
               className="w-full rounded-xl border-2 border-primary p-2"
-              disabledKeyboardNavigation
+              showMonthDropdown
+              showYearDropdown
+              dropdownMode="select"
             />
             <DatePicker
+              dateFormat="dd/MM/yyyy"
               placeholderText="Start Date"
               selected={startDate}
               onChange={(date: Date) => setStartDate(date)}
               className="w-full rounded-xl border-2 border-primary p-2"
-              disabledKeyboardNavigation
+              showMonthDropdown
+              showYearDropdown
+              dropdownMode="select"
             />
           </div>
         </div>
@@ -65,10 +75,11 @@ export default function CreateEmployee(): JSX.Element {
             <p className="text-center">Department</p>
           </div>
           <div className="flex w-full flex-col items-center gap-4">
-            <Input placeholder="Department" type="text" />
+            <Input placeholder="Department" type="text" listName="department-list" datalist={departmentList} />
           </div>
         </div>
       </Stepper>
+      <Modale show={displayModale} />
     </div>
   );
 }
