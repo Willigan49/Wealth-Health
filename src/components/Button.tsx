@@ -1,7 +1,9 @@
-export default function Button({ label }: { label: string}): JSX.Element {
+import { MouseEventHandler } from "react";
+
+export default function Button({ label, handleClick }: { label: string, handleClick?: MouseEventHandler}): JSX.Element {
   return (
     <>
-      <button className="bg-primary p-2 text-secondary w-24 h-10 rounded-lg">{label}</button>
+      <button onClick={handleClick} className="bg-primary px-4 text-secondary min-w-[100px] h-10 rounded-lg">{label}</button>
     </>
   );
 }

@@ -17,7 +17,7 @@ export default function CreateEmployee(): JSX.Element {
 
   return (
     <div className="w-full max-w-[480px] rounded-3xl bg-secondary p-10">
-      <h1 className="text-center text-xl">Create Employee</h1>
+      <h1 className="text-center text-xl" >Create Employee</h1>
       <Stepper
         strokeColor="#46D92C"
         fillStroke="#46D92C"
@@ -27,6 +27,7 @@ export default function CreateEmployee(): JSX.Element {
         continueBtn={<Button label="Next"></Button>}
         backBtn={<Button label="Previous"></Button>}
         submitBtn={<Button label="Validate"></Button>}
+        onSubmit={() => setDisplayModale(true)}
       >
         <div className="flex flex-col items-center gap-10 py-10">
           <div>
@@ -59,7 +60,6 @@ export default function CreateEmployee(): JSX.Element {
         </div>
         <div className="flex flex-col items-center gap-10 py-10">
           <div>
-            <h1 className="text-center text-xl">Create Employee</h1>
             <p className="text-center">Adress</p>
           </div>
           <div className="flex w-full flex-col items-center gap-4">
@@ -71,7 +71,6 @@ export default function CreateEmployee(): JSX.Element {
         </div>
         <div className="flex flex-col items-center gap-10 py-10">
           <div>
-            <h1 className="text-center text-xl">Create Employee</h1>
             <p className="text-center">Department</p>
           </div>
           <div className="flex w-full flex-col items-center gap-4">
