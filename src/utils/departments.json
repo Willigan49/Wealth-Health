@@ -1,7 +1,8 @@
 [
-  { "name": "Sales", "id": 0 },
-  { "name": "Engineering", "id": 1 },
-  { "name": "Human Resources", "id": 2 },
-  { "name": "Legal", "id": 3 },
-  { "name": "Marketing", "id": 4 }
+  { "name": "Department", "id": 0 },
+  { "name": "Sales", "id": 1 },
+  { "name": "Engineering", "id": 2 },
+  { "name": "Human Resources", "id": 3 },
+  { "name": "Legal", "id": 4 },
+  { "name": "Marketing", "id": 5 }
 ]
