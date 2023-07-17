@@ -7,17 +7,16 @@ import { useState } from "react";
 import unitedStates from "../utils/states.json";
 import departments from "../utils/departments.json";
 import Modale from "../components/Modale";
+import SelectComponent from "../components/SelectComponent";
 
 export default function CreateEmployee(): JSX.Element {
   const [birthDate, setBirthDate] = useState<Date | null>(null);
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [displayModale, setDisplayModale] = useState<boolean>(false);
-  const unitedStatesList = unitedStates.map((state) => <option value={state.name} key={state.abbreviation}></option>);
-  const departmentList = departments.map((department) => <option value={department.name} key={department.id}></option>);
 
   return (
     <div className="w-full max-w-[480px] rounded-3xl bg-secondary p-10">
-      <h1 className="text-center text-xl" >Create Employee</h1>
+      <h1 className="text-center text-xl">Create Employee</h1>
       <Stepper
         strokeColor="#46D92C"
         fillStroke="#46D92C"
@@ -65,7 +64,7 @@ export default function CreateEmployee(): JSX.Element {
           <div className="flex w-full flex-col items-center gap-4">
             <Input placeholder="Street" type="text" />
             <Input placeholder="City" type="text" />
-            <Input placeholder="State" listName="state-list" datalist={unitedStatesList} />
+            <SelectComponent name="State" options={unitedStates} onChange={(e: any) => console.log(e.target.value)} />
             <Input placeholder="ZIP Code" type="number" />
           </div>
         </div>
@@ -74,7 +73,7 @@ export default function CreateEmployee(): JSX.Element {
             <p className="text-center">Department</p>
           </div>
           <div className="flex w-full flex-col items-center gap-4">
-            <Input placeholder="Department" type="text" listName="department-list" datalist={departmentList} />
+          <SelectComponent name="Departments" options={departments} onChange={(e: any) => console.log(e.target.value)} />
           </div>
         </div>
       </Stepper>
