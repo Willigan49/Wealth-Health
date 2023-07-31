@@ -7,7 +7,6 @@ export default {
       secondary: "#FFFFFF",
       error: "#FF0000",
       success: "#46D92C",
-      placeholder: "#A2A2A2",
       black: "#000000"
     },
     fontFamily: {

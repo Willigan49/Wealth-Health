@@ -1,15 +1,13 @@
-import { ChangeEventHandler } from "react";
+import ReactDatePicker from "react-datepicker";
 
 type Props = {
-  placeholder?: string;
-  type?: string;
   label: string;
-  onChange: ChangeEventHandler<HTMLInputElement>;
-  autoFocus?: boolean | undefined;
-  errorStatus: string;
+  selectedDate: Date | null;
+  onChange: any;
+  errorStatus: string
 };
 
-export default function Input({ placeholder, type, label, onChange, autoFocus, errorStatus }: Props): JSX.Element {
+export default function DatePicker({ label, selectedDate, onChange, errorStatus }: Props) {
   function defineInputStatus(errorStatus: string): string {
     switch (errorStatus) {
       case "empty":
@@ -23,11 +21,19 @@ export default function Input({ placeholder, type, label, onChange, autoFocus, e
         return "w-full rounded-xl border-2 border-primary p-2 placeholder-primary placeholder-opacity-70";
     }
   }
-
   return (
     <label className="w-full">
-      {`${label}*`}
-      <input className={defineInputStatus(errorStatus)} placeholder={placeholder} type={type} onChange={onChange} autoFocus={autoFocus} />
+      {label}
+      <ReactDatePicker
+        dateFormat="dd/MM/yyyy"
+        placeholderText="25/07/2023"
+        selected={selectedDate}
+        onChange={onChange}
+        className={defineInputStatus(errorStatus)}
+        showMonthDropdown
+        showYearDropdown
+        dropdownMode="select"
+      />
       {errorStatus === "error" ? <p className="pl-3 text-xs text-error">Please enter a valid {label}</p> : null}
     </label>
   );
