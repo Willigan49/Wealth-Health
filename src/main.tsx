@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Root from "./routes/Root.tsx";
-import store from "./store.ts";
+import { store } from "./store.ts";
 import CreateEmployee from "./routes/CreateEmployee.tsx";
+import TableEmployee from "./routes/TableEmployee.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import "./index.css";
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/table",
-        element: <h1>table Employee</h1>,
+        element: <TableEmployee />,
       },
     ],
   },
