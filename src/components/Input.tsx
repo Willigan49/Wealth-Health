@@ -7,9 +7,10 @@ type Props = {
   onChange: ChangeEventHandler<HTMLInputElement>;
   autoFocus?: boolean | undefined;
   errorStatus: string;
+  value: string;
 };
 
-export default function Input({ placeholder, type, label, onChange, autoFocus, errorStatus }: Props): JSX.Element {
+export default function Input({ placeholder, type, label, onChange, autoFocus, errorStatus, value }: Props): JSX.Element {
   function defineInputStatus(errorStatus: string): string {
     switch (errorStatus) {
       case "empty":
@@ -27,7 +28,7 @@ export default function Input({ placeholder, type, label, onChange, autoFocus, e
   return (
     <label className="w-full">
       {`${label}*`}
-      <input className={defineInputStatus(errorStatus)} placeholder={placeholder} type={type} onChange={onChange} autoFocus={autoFocus} />
+      <input value={value} className={defineInputStatus(errorStatus)} placeholder={placeholder} type={type} onChange={onChange} autoFocus={autoFocus} />
       {errorStatus === "error" ? <p className="pl-3 text-xs text-error">Please enter a valid {label}</p> : null}
     </label>
   );

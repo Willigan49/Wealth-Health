@@ -7,7 +7,8 @@ export default {
       secondary: "#FFFFFF",
       error: "#FF0000",
       success: "#46D92C",
-      black: "#000000"
+      black: "#000000",
+      desactivate: "#6df5ff"
     },
     fontFamily: {
       nunito: ['Nunito', 'sans-serif']

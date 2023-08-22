@@ -47,7 +47,7 @@ export default function SelectComponent({ name, options, onChange, label, errorS
     <label className="w-full">
       {`${label}*`}
       <Select name={name} options={options} onChange={onChange} style={defineInputStatus(errorStatus)} />
-      <p className="pl-3 text-xs text-error">Please enter a valid {label}</p>
+      {errorStatus == "empty" ? <p className="pl-3 text-xs text-error">Please choose a {label}</p> : null}
     </label>
   );
 }
