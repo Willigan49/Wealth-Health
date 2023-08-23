@@ -33,6 +33,7 @@
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.1",
     "react-router-dom": "^6.11.2",
+    "redux-persist": "^6.0.0",
     "select-component-oc": "^1.1.0",
     "sort-by": "^0.0.2"
   },
