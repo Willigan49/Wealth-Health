@@ -18,7 +18,7 @@ export default function TableEmployee() {
     };
   }, []);
   const [colDefs] = useState<ColDef<Employee>[]>([
-    { field: "firstName"},
+    { field: "firstName" },
     { field: "lastName" },
     { field: "birthDate" },
     { field: "startDate" },
@@ -34,6 +34,7 @@ export default function TableEmployee() {
     columnDefs: colDefs,
     defaultColDef: defaultColDefs,
     pagination: true,
+    paginationPageSize: 10,
     rowSelection: "single",
     suppressMovableColumns: true,
   };
