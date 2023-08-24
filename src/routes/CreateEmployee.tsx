@@ -11,9 +11,9 @@ import SelectComponent from "../components/SelectComponent";
 import { addEmployee } from "../reducers/employeeSlice";
 import DatePicker from "../components/DatePicker";
 import { nameReg, dateReg, zipReg, streetReg } from "../utils/regex";
+import { format } from "date-fns";
 
 import type { Dispatch } from "redux";
-import { format } from "date-fns";
 
 interface Employee {
   firstName: string | null;
@@ -109,8 +109,8 @@ export default function CreateEmployee(): JSX.Element {
     const employee: Employee = {
       firstName,
       lastName,
-      birthDate: birthDate?.toISOString(),
-      startDate: startDate?.toISOString(),
+      birthDate: format(birthDate!, "dd/MM/yyyy"),
+      startDate: format(startDate!, "dd/MM/yyyy"),
       street,
       city,
       state,
