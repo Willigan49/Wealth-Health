@@ -7,7 +7,7 @@ import { Select } from "select-component-oc";
 import entries from "../utils/entries.json";
 
 import "ag-grid-community/styles/ag-grid.css";
-import "ag-grid-community/styles/ag-theme-alpine.css";
+import "ag-grid-community/styles/ag-theme-material.css";
 
 export default function TableEmployee() {
   const employees = useSelector((state: any) => state.employees);
@@ -65,7 +65,7 @@ export default function TableEmployee() {
           Show <Select name="pagination" options={entries} onChange={onFilterNumberEntries} style={{color: "black"}} /> entries
         </p>
       </div>
-      <div className="ag-theme-alpine" style={{ height: 600, width: "100%" }}>
+      <div className="ag-theme-material" style={{ height: 600, width: "100%" }}>
         <AgGridReact gridOptions={gridOptions}></AgGridReact>
       </div>
     </div>
