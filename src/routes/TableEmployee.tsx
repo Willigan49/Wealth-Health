@@ -13,8 +13,11 @@ export default function TableEmployee() {
   const defaultColDefs = useMemo(() => {
     return {
       width: 155,
-      editabkle: false,
+      editable: false,
       resizable: true,
+      sortable: true,
+      unSortIcon: true,
+
     };
   }, []);
   const [colDefs] = useState<ColDef<Employee>[]>([
