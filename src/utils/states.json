@@ -1,9 +1,8 @@
 [
   {
-    "name": "State",
-    "abbreviation": "ST",
-    "id": 0 
-   },
+    "name": "Choose a state",
+    "id": 0
+  },
   {
     "name": "Alabama",
     "abbreviation": "AL",
@@ -12,7 +11,7 @@
   {
     "name": "Alaska",
     "abbreviation": "AK",
-    "id": 2 
+    "id": 2
    },
   {
     "name": "American Samoa",
@@ -37,7 +36,7 @@
   {
     "name": "Colorado",
     "abbreviation": "CO",
-    "id": 7  
+    "id": 7 
   },
   {
     "name": "Connecticut",
