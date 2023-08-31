@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+], {basename: import.meta.env.DEV ? '/' : '/Wealth-Health/'});
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
