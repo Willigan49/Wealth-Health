@@ -11,32 +11,10 @@ import SelectComponent from "../components/SelectComponent";
 import { addEmployee } from "../reducers/employeeSlice";
 import DatePicker from "../components/DatePicker";
 import { nameReg, dateReg, zipReg, streetReg } from "../utils/regex";
+import { format } from "date-fns";
+import { type Department, type Employee, type States } from '../enum/types';
 
 import type { Dispatch } from "redux";
-import { format } from "date-fns";
-
-interface Employee {
-  firstName: string | null;
-  lastName: string | null;
-  birthDate: string | null | undefined;
-  startDate: string | null | undefined;
-  street: string | null;
-  city: string | null;
-  state: string | null;
-  zipCode: string | null;
-  department: string | null;
-}
-
-interface States {
-  name: string,
-  abbreviation: string,
-  id: number
-}
-
-interface Department {
-  name: string,
-  id:number
-}
 
 export default function CreateEmployee(): JSX.Element {
   const [firstName, setFirstName] = useState<string>("");
@@ -109,8 +87,8 @@ export default function CreateEmployee(): JSX.Element {
     const employee: Employee = {
       firstName,
       lastName,
-      birthDate: birthDate?.toISOString(),
-      startDate: startDate?.toISOString(),
+      birthDate: format(birthDate!, "dd/MM/yyyy"),
+      startDate: format(startDate!, "dd/MM/yyyy"),
       street,
       city,
       state,
